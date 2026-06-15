@@ -1,0 +1,8 @@
+[params] # ursino giannessi parametrization (sat1 > sat2)
+tau = 20.
+Gtot = 0.9	
+sat1 = 0.4
+sat2 = 7.	
+Gmulbase = 10.07893 
+kmult = 0.5
+CO2reactivityON = 0

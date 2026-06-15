@@ -1,0 +1,42 @@
+[methods]
+method = 1
+
+[compliances]
+cl = 0.00127
+ctr = 0.00238 
+cb = 0.0131
+cA = 0.2
+ccw = 0.2445 
+cabd = 0.183
+
+[unstressed_volumes]
+vul = 34.4 
+vutr = 6.63 
+vub = 18.7 
+vuA = 1.263
+
+[resistances]
+rml = 1.021
+rlt = 0.3369
+rtb = 0.3063
+rba = 0.0817  
+
+[respiratory]
+rr = 15. 
+ieratio = 0.6
+frc = 2.4
+pplee = -5. 
+pmusmin = -5. 
+tauCoeff = 0.2
+pao = 0.
+pvent = 0.
+patm = 0.
+IAPee = 2.45
+
+[ics]
+vl = 0.0344 
+vtr = 0.01863
+vb = 0.0842
+vA = 2.263
+vpl = 0. 
+xi = 0. 

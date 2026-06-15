@@ -1,0 +1,287 @@
+[network]
+vesselFile = ./mesh/vessADAVN86coupling_mod_updated_resistancesANDcompliances_adjCor_modIC_new_bc6.txt
+nodeFile = ./mesh/nodesADAVN86coupling.txt
+vesselFileASE = ./mesh/vessADAVN86coupling_Xase.txt
+vesselFileNamesASE = ./mesh/vessADAVN86coupling_NamesASE.txt
+vesselFileASErad = ./mesh/vessADAVN86coupling_Rase.txt
+NV = 516
+NVglob = 516
+NVC = 31                        ## Number of columns
+NN = 494
+NNC = 7
+NEJ = 6                         ## max number of segments per junction
+NCELLSmin = 1
+DXmax = 1
+OpenClosed = 1                  ## CHANGED: From 0 to 1 to ADAVN
+plotRes = 1
+sampleSpaceASE = 1
+tIniSampleSpace = 80.           ## Original: 10000
+tEndSampleSpace = 101.          ## Original: 10000
+tIniSampleMid = 0.              ## Original: 9.
+tEndSampleMid = 101.            ## Original: 10.
+multSampleMid = 5
+NVCASE = 507 
+doplotTableADAVNpaper = 1               ## Not in ADAVN input
+modifyVesselLengthsFromTableFile = 1    ## Not in ADAVN input
+
+matchStretchedBloodVolume = 1
+StretchedBloodVolume = 4873.1033 # 2273.643
+timeStretchedBloodVolume = 3.
+NCVA = 9 # max number of additional venous terminals connected to an arterial terminal: 0 if full ADAVN (2 terminals total), 9 if small ADAVN (11 terminals total) 
+monitorSomeVessels = 1
+monitorSomeVesselsNum = 1
+monitorSomeVesselsIdxs = '97'
+monitorHeart = 0
+monitorPulmonary = 0
+monitorCSF = 0
+monitorCoronaries = 0
+monitorTerminals = 0
+NCVA = 9 # max number of additional venous terminals connected to an arterial terminal: 0 if full ADAVN (2 terminals total), 9 if small ADAVN (11 terminals total) 
+convergence = 0
+
+
+[numerics]
+timeStepping = 1
+CFL = 0.9
+schemeOrder = 1               # Changed from 2 to 1
+Lmin = 0.1                    # Changed from 0 to 0.1
+epsilon = 100
+adaptiveEpsilon = 1           # 0: elastico, 1: viscoelastico
+deltaEpsilon = 1
+dtType = __CONSTANT__ 
+dtFixed = 0.0006              # Changed from 0.0001 to 0.0006
+tolAFP = 1e-08
+tolADER = 1e-08
+tolLTS = 1e-08                # Changed from 1.e-10 to 1.e-8
+roundVal = 1e+14              # Changed from 1e+20 to 1e14
+dtMaxLTSLIMIT = 0.001
+adaptiveCFLLTS = 1            # Changed from 0 to 1
+tIni = 0
+tEnd = 100.                   # Changed from 10 to 100
+kalmanMode = 0                # Missing in ADAVN input - deafult in ioClosedLoop = 0
+
+dtMaxLTSround = 1000000
+sigdigitis = 5
+changeElasVisco = 0
+schemeTy = 0
+exactA = 0
+originalComputations = 0
+godunovBoundaryFluxes = 1
+laxFriedrichsTransport = 0
+DOTTransport = 1
+numFluxFromFluctuations = 0
+fluctFromNumFluxes = 0
+fluctTrickOn = 0
+areaSegment = 0
+fluctExplicit = 0
+GaussLobattoFLUCT = 0
+hybridO2 = 0
+
+
+[output]
+testcase = adan
+outDir = ./res/
+
+verbose =  1
+readStateMode = 0
+stateDir = ./res/ 
+runDir = .
+fullStateFile = ./res/state/stateVess
+midStateFile = ./res/mid/bas_mid
+
+[parti]
+meshDir = ./mesh/
+partitioning = 1
+
+[physics]
+kmrefSelection = 0           # 0: viscoelastico, 1: elastico
+rho = 1.04
+MU = 0.04
+velProf = 4
+MUPERFORATOR = 0.01
+rTerminalMulGeneric = 0.832               # Changed from 1 to 0.832
+rTerminalMulMiocardium_RCA = 0.832        #####rTerminalMulMiocardium = 1. #0.8752
+rTerminalMulMiocardium_LAD = 0.832
+rTerminalMulMiocardium_LCX = 0.832
+rTerminalMulIntracranial = 0.832          # Changed from 1 to 0.832
+PiniA = 120000                            # Changed from 100000 to 120000
+PiniV = 8000.                             # Changed from 0 to 8000
+PiniArterioles = 100000.                  # Arteriolar initial pressure [dyn/cm2] = 120000
+PiniCapillaries = 10000.                  # Capillar initial pressure [dyn/cm2] = 10000
+T0 = 0.8                                  # Changed from 1 to 0.8
+mmHgDyncm2 = 1333.22
+inflowType=0                              # Changed from 3 (read from file) to 0 (mynard flow curve)
+
+## Missing
+idxCoronary = 61
+idxCoronaryLeft = 27
+idxCoronaryRight = 26
+numGroupMult = 1
+numRegionsMult = '1'
+typeRegionsMult = '0'
+typeVessRegionsMult = '1'
+coeffRegionsMult = '1.0'
+indexesGroupMult = '-1'
+
+## Added
+cmH2OmmHg = 0.73556
+pRAfixed = 7000
+fixInflow = 10.
+PiniArteriolesCoronary = 100000.
+PiniComp1 = 100000.
+PiniComp2_Endo = 7000. 
+PiniComp2_Mid = 7000. 
+PiniComp2_Epi = 7000. 
+PiniCapillariesICP = 25000.
+coronaryParams = paramADAVN86_noResp/coronary1.dat
+heartParams = paramADAVN86_noResp/heart.dat
+pulmonaryParams = paramADAVN86_noResp/pulmonary.dat
+venousValvesParams = paramADAVN86_noResp/valves.dat
+starlingParams = paramADAVN86_noResp/starling.dat
+nValves = 30 # unchanged: same veins
+nStarling = 53 # unchanged: same cerebral veins
+starlingIdeal = 1 # implicit treatment of SR
+PeriVess = 1
+
+
+### Missing -> [boundary]
+outflowBCfile = inflowADAN.txt
+outflowBCn = 1
+outflowBCnt = 433
+outflowBCidx = '97'
+
+[tubelaws]
+YoungModulus = 1.2e+07
+P0 = 100000
+eeref = 4e+06
+ecref = 1e+09
+kmref = 300000
+rABArtery = 0.18
+rBCArtery = 0.07
+wAeArtery = 0.85
+wAcArtery = 0.05
+wAmArtery = 0.1
+wBeArtery = 0.65
+wBcArtery = 0.2
+wBmArtery = 0.15
+wCeArtery = 0.45
+wCcArtery = 0
+wCmArtery = 0.55
+ep0Artery = 0.25            # Changed from 0.35 to 0.25
+eprArtery = 0.05
+aloArtery = 0.2802
+bloArtery = -5.053
+cloArtery = 0.1324
+dloArtery = -0.1114
+
+tlTypeArtery = 0
+tlTypeVein = 2
+mVein = 10.
+nVein = -1.5
+mSinus = 0.5
+nSinus = 0. 
+cMin = 200.
+cMax = 400.
+cSinuses = 700.
+rMinVein = 0.08
+rMaxVein = 0.8
+GammaVein = 1e5
+venousSysComp = 146.
+P0vein = 6666.66
+changeA0Artery = 0
+
+# 0: Resitencia
+# 1: Capacitor
+# 2: Espesura parede arterial
+# 3: Area luminal no repouso
+# 4: Rigidez elastica
+# 5: eps0
+# 6: Gamma - viscoelasticity parameter
+# 7: Rigidez colageno
+
+
+####################################################
+## NEW IN NO_RESP CASE
+####################################################
+
+[csf]
+csfModel = 0 		  #>>>> csfModel <= 1: Ursino; csfModel == 2: Linninger; csfModel==3: Linninger0D + spinal1D
+pIntracranial = 0         # Changed from 0 to 14665.42 = 11 mmHg +-
+
+csfPartitionType = 1
+pIntracranialIni = 14665.42
+pIntracranialEnd = 14665.42
+idxEncephalon = 2
+idxBrain = 3
+idxCerebellum = 4
+idxPons = 5
+idxDuraMater = 6
+elastanceCsf = 0.15
+rInCsf = 1e10
+rOutCsf = 1e10
+tIniCsf = 40.
+
+
+[Uvol]
+useUnstressedVol = 1
+NonlinearCap = 0
+volU_Art = 615.0
+volU_Ven = 2500.0
+
+rartioA = 0.989113
+rartioV = 0.985422
+rartioAcor = 0.010887
+rartioVcor = 0.0145779
+
+
+
+####################################################
+## IF RESPIRATION ON
+####################################################
+[respiration]
+respirationOn = 1
+doValsalva = 0
+NidxRegThorax = 9
+NidxRegAbdomen = 13
+idxRegThorax = '20 22 23 25 26 27 28 29 41'
+idxRegAbdomen = '24 30 31 32 33 34 35 36 37 38 39 40 47'
+
+[lungMechanics]
+lungsOn = 1
+lungsParams = paramADAVN86/lungMechanics_data.dat
+
+
+
+#############################################################################################################################################################
+# LOOK AT THE FOLLOWING IF INTERESTED IN TRANSPORT; EXCHANGE; AUTOREGULATION. Note, if autoregulation, vesselFile will need to be modified (will soon upload)
+#############################################################################################################################################################  
+
+[transport]
+nTR = 0
+transportTerminalTest = 0
+cTR_IC_type = 0
+cTR_BC_type = 0
+cTR_initial = '0.'
+cTR_initial_testBolus = '200.'
+testBolusID = 407.
+testBolus = 0
+
+cTR_initial_artery = '0.2 0.45 '
+cTR_initial_vein = '0.17 0.48 '
+
+gasOn = 0
+gasParams = paramADAVN86/Gas_new_param1.dat
+gasExchangeType = 4
+gasType = 2
+
+albaneseOn = 0
+
+
+[genAutoregulation]
+genAutoregulationOnUrsinoGiannessi = 0 
+genAutoregulationParamsUrsinoGiannessi = paramADAVN86/genAutoregulationOrig.dat
+tIniAutoregUrsinoGiannessi = 10.
+tIniSampleMidAutoregUrsinoGiannessi = 80.
+tEndSampleMidAutoregUrsinoGiannessi = 100.
+nRegionsUrsinoGiannessi = 1
+regionIDUrsinoGiannessi = '3'

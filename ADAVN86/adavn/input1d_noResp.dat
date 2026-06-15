@@ -1,0 +1,231 @@
+[network]
+vesselFile = ./mesh_ADAVN86_OC1/vessADAVN86coupling_mod_updated_resistancesANDcompliances_adjCor_modIC_new_bc6.txt
+nodeFile = ./mesh_ADAVN86_OC1/nodesADAVN86coupling.txt
+vesselFileASE = ./mesh_ADAVN86_OC1/vessADAVN86coupling_Xase.txt
+vesselFileNamesASE = ./mesh_ADAVN86_OC1/vessADAVN86coupling_NamesASE.txt
+vesselFileASErad = ./mesh_ADAVN86_OC1/vessADAVN86coupling_Rase.txt
+vesselFileASEWriteAll = 0
+
+sampleSpaceASE = 1
+tIniSampleSpace = 80. 
+tEndSampleSpace = 101.	
+plotRes = 1
+tIniSampleMid = 0.
+tEndSampleMid = 101.
+multSampleMid = 5.
+
+
+monitorSomeVessels = 1
+monitorSomeVesselsNum = 1
+monitorSomeVesselsIdxs = '97'
+monitorHeart = 0
+monitorPulmonary = 0
+monitorCSF = 0
+monitorCoronaries = 0
+monitorTerminals = 0
+
+NV = 516 # modified
+NVglob = 516 # modified
+NN = 494 # modified
+
+NVCASE = 507 # 390 in the complete model
+NVC = 31 # number of columns, includes also the ghost ones filled within the code (20, 21, 22 starting the numbering from 1)
+NNC = 7 # not changed
+NEJ = 6 # max number of segments per junction: should we change it?
+NCVA = 9 # max number of additional venous terminals connected to an arterial terminal: 0 if full ADAVN (2 terminals total), 9 if small ADAVN (11 terminals total) 
+
+NCELLSmin = 1
+DXmax = 1.0
+OpenClosed = 1
+matchStretchedBloodVolume = 1
+StretchedBloodVolume = 4873.1033 # 2273.643
+timeStretchedBloodVolume = 3.
+
+convergence = 0
+
+[numerics]
+timeStepping = 1
+schemeTy = 0
+CFL = 0.9
+schemeOrder = 1
+Lmin = 0.1
+epsilon = 100.
+adaptiveEpsilon = 1
+deltaEpsilon = 1.
+dtType = __CONSTANT__
+dtFixed = 0.0006
+tolAFP = 1e-8
+tolADER = 1e-8
+tolLTS = 1e-8
+roundVal = 1e14
+sigdigitis = 5
+dtMaxLTSLIMIT = 1e-3
+
+dtMaxLTSround = 1000000
+adaptiveCFLLTS = 1
+
+tIni = 0.
+tEnd = 100.
+
+changeElasVisco = 0
+
+exactA = 0
+originalComputations = 0
+godunovBoundaryFluxes = 1
+laxFriedrichsTransport = 0
+DOTTransport = 1
+numFluxFromFluctuations = 0
+fluctFromNumFluxes = 0
+fluctTrickOn = 0
+areaSegment = 0
+fluctExplicit = 0
+GaussLobattoFLUCT = 0
+hybridO2 = 0
+
+[physics]
+
+inflowType = 0
+pRAfixed = 7000
+
+fixInflow = 10.
+kmrefSelection = 0
+
+rho = 1.040
+MU = 0.04
+velProf = 4.
+MUPERFORATOR = 0.01
+rTerminalMulGeneric = 0.832 
+rTerminalMulMiocardium_RCA = 0.832 
+rTerminalMulMiocardium_LAD = 0.832
+rTerminalMulMiocardium_LCX = 0.832
+rTerminalMulIntracranial = 0.832
+
+PiniA = 120000. 
+PiniV = 8000.
+PiniArterioles = 100000.
+PiniCapillaries = 10000.
+PiniArteriolesCoronary = 100000.
+PiniComp1 = 100000.
+PiniComp2_Endo = 7000. 
+PiniComp2_Mid = 7000. 
+PiniComp2_Epi = 7000. 
+PiniCapillariesICP = 25000.
+coronaryParams = paramADAVN86_noResp/coronary1.dat
+heartParams = paramADAVN86_noResp/heart.dat
+pulmonaryParams = paramADAVN86_noResp/pulmonary.dat
+venousValvesParams = paramADAVN86_noResp/valves.dat
+starlingParams = paramADAVN86_noResp/starling.dat
+nValves = 30 # unchanged: same veins
+nStarling = 53 # unchanged: same cerebral veins
+starlingIdeal = 1 # implicit treatment of SR
+
+#termID = 
+
+T0 = 0.8
+mmHgDyncm2 = 1333.22368
+cmH2OmmHg = 0.73556
+
+PeriVess = 1
+
+
+[csf]
+csfModel = 0 # "simple csf model". Set this to 1 to turn it on
+csfPartitionType = 1
+pIntracranial = 14665.42
+pIntracranialIni = 14665.42
+pIntracranialEnd = 14665.42
+idxEncephalon = 2
+idxBrain = 3
+idxCerebellum = 4
+idxPons = 5
+idxDuraMater = 6
+elastanceCsf = 0.15
+rInCsf = 1e10
+rOutCsf = 1e10
+tIniCsf = 40.
+
+[tubelaws]
+
+tlTypeArtery = 0
+tlTypeVein = 2
+
+mVein = 10.
+nVein = -1.5
+
+mSinus = 0.5
+nSinus = 0. 
+
+cMin = 200.
+cMax = 400.
+
+
+cSinuses = 700.
+
+rMinVein = 0.08
+rMaxVein = 0.8
+
+GammaVein = 1e5
+
+YoungModulus=1.2e7
+
+venousSysComp = 146.
+
+P0 = 100000.
+P0vein = 6666.66
+
+changeA0Artery = 0
+
+eeref = 4.0e6
+ecref = 1e9
+kmref = 3.6e5
+
+rABArtery = 0.18
+rBCArtery = 0.07
+
+wAeArtery = 0.85			
+wAcArtery = 0.05
+wAmArtery = 0.10
+wBeArtery = 0.65
+wBcArtery = 0.20
+wBmArtery = 0.15
+wCeArtery = 0.45
+wCcArtery = 0.0
+wCmArtery = 0.55
+aloArtery = 0.2802
+bloArtery = -5.053
+cloArtery = 0.1324
+dloArtery = -0.1114
+ep0Artery = 0.25
+eprArtery = 0.05
+
+
+[output]
+testcase = bas
+outDir = ./test_noResp_O2/
+verbose =  1
+readStateMode = 0
+stateDir = ./test_noResp_O2/ 
+runDir = .
+fullStateFile = ./test_noResp_O2/state/stateVess
+midStateFile = ./test_noResp_O2/mid/bas_mid
+
+
+[parti]
+meshDir = ./mesh_ADAVN86_OC1/
+partitioning = 1
+
+
+[Uvol]
+useUnstressedVol = 1
+NonlinearCap = 0
+volU_Art = 615.0
+volU_Ven = 2500.0
+
+rartioA = 0.989113
+rartioV = 0.985422
+rartioAcor = 0.010887
+rartioVcor = 0.0145779
+
+
+
+

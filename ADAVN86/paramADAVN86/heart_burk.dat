@@ -1,0 +1,106 @@
+[general]
+volSource = 0. 
+timeSource = 0.8
+T0 = 0.8
+tIni = 0.
+mod = 3
+BurkhoffAtriaOn = 1
+BurkhoffVentriclesOn = 1
+
+# reference onset of contraction [s]
+tOnsetRA = 0.8125	
+tOnsetRV = 0.		
+tOnsetLA = 0.8125		
+tOnsetLV = 0.		
+# reference contraction time offset [s]   
+tau1RA = 0.0525
+tau1RV = 0.2687
+tau1LA = 0.0525
+tau1LV = 0.2687
+# refecence relaxation time offset [s] 
+tau2RA = 0.1725
+tau2RV = 0.4525
+tau2LA = 0.1725
+tau2LV = 0.4525
+# contraction rate constant
+m1RA = 1.99
+m1RV = 1.32
+m1LA = 1.99
+m1LV = 1.32
+# relaxation rate constant
+m2RA = 11.2
+m2RV = 21.9
+m2LA = 11.2
+m2LV = 21.9
+# min. free-wall elastance [dyn/cm2/cm3]
+efwMinRA = 90.
+efwMinRV = 71.5
+efwMinLA = 180.
+efwMinLV = 102.3
+# max. free-wall elastance [dyn/cm2/cm3] 
+efwMaxRA = 255.
+efwMaxRV = 640.
+efwMaxLA = 357.
+efwMaxLV = 3580.8
+# septal elastance constant
+kLRA = 1.
+kLRV = 2.
+kLLA = 3.
+kLLV = 6.
+# septal elastance constant
+kRRA = 1.
+kRRV = 2.
+kRLA = 3.
+kRLV = 6.
+# atrioventricular plane piston constant
+muavRA = 0.01
+muavRV = 0.
+muavLA = 0.02
+muavLV = 0.
+# volume at p=0   [cm3]
+v0RA = 7.
+v0RV = 20.
+v0LA = 3.
+v0LV = 10.
+# volume at t=0   [cm3]
+vRA = 67.
+vRV = 172.
+vLA = 71.
+vLV = 136.
+# source resistance constant   [cs/cm3]  try to increase
+ksRA = 0.5e-3 
+ksRV = 1.0e-3 
+ksLA = 0.25e-3
+ksLV = 0.5e-3 
+# pericardium parameters
+kpc = 666.61184
+v0pc = 700.
+phipc = 40.
+vpcf = 30.
+vmio = 192.
+
+[valves]
+valveMstSpec = '1. 1. 1. 1.'
+valveMrgSpec = '0.00001 0.00001 0.00001 0.00001'
+valveKvoSpec = '0.03 0.02 0.02 0.02'
+valveKvcSpec = '0.04 0.02 0.04 0.02'
+valveDPopenSpec = '0. 0. 0. 0.'
+valveDPcloseSpec = '0. 0. 0. 0.'
+valveLeffSpec = '2.0 1.5 2.0 1.0'
+valveAnnSpec = '6.0 5.7 5.1 4.9'
+valveTypeSpec = '0 0 0 0'
+
+[burkhoff]
+alphaRA_0 = 0.02
+alphaLA_0 = 0.02	
+mRA_0 = 0.00001
+mLA_0 = 0.00001
+betaRA = 0.22
+betaLA = 0.22
+alphaRV_0 = 0.015
+alphaLV_0 = 0.015
+mRV_0 = 0.00005
+mLV_0 = 0.00005
+betaRV = 0.22
+betaLV = 0.22
+

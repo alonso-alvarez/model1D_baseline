@@ -1,0 +1,32 @@
+[timing]
+tIni = 0.
+
+[resistances]
+RA = 53.3289472
+RC = 53.3289472
+RV = 6.6661184
+
+[inertances]
+LA = 0.66661184
+LC = 0.66661184
+LV = 0.66661184
+
+[elastances] 
+EA = 26.6644736
+EC = 26.6644736
+EV = 26.6644736
+
+[volconst]
+PHIA = 20.
+PHIC = 60.
+PHIV = 200.
+
+[viscoelastances]
+VEA = 13.3322368
+VEC = 13.3322368
+VEV = 13.3322368
+
+[ics]
+pA = 1e4
+pC = 1e4
+pV = 1e4

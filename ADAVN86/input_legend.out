@@ -1,0 +1,94 @@
+#########################################
+
+### model1d.cc
+- duvida -> line 732: initAutoreUrsinoGiannessi()
+- duvida -> CbfType starts regulation model - initCBFregulationUrsino()
+
+
+> params:
+  hasCsf          >   defined as in trento
+  mean_qCSFin     >   defined in csfLinninger_spinal.cc
+  mean_qCSFout    >   defined in csfLinninger_spinal.cc
+  mean_vBrainOLD  >   defined in csfLinninger_spinal.cc
+  mean_XcsfOLD    >   defined in csfLinninger_spinal.cc
+  nVarCsf         >   defined in csfLinninger_spinal.cc
+  mean_vBrainOLD  >   defined in csfLinninger_spinal.cc
+  mean_XcsfOLD    >   defined in csfLinninger_spinal.cc
+
+  volIntracranial1DDural     > added in model1d.h
+
+
+> added:
+  initCsfLinninger_spinal()         > defined in csfLinninger_spinal.cc + added in model1d.h
+  readStateCsfLinninger_spinal()    > defined in csfLinninger_spinal.cc + added in model1d.h
+  saveStateCsfLininger_spnial()     > defined in csfLinninger_spinal.cc + added in model1d.h
+  readCsfParameters( csfParams )    > added in model1d.h - Maybe belong to csfLinninger.csf
+  saveStateCsfUrsinoADAVN()         > same in model1d.h
+  computeCerebralVesselsVolume      > added in model1d.h
+  computeCerebralTerminalsVolume    > added in model1d.h
+  computeCerebralVasculatureVolume  > added in model1d.h
+  solveCsfLinninger_spinal          > added in model1d.h
+
+
+> These were added in .h but are not in model1d.cc (??)
+  solveCsfLinningerInit_spinal      > added in model1d.h
+  csfOutput_spinal                  > added in model1d.h
+  setICP                            > added in model1d.h
+  setICP_spinal                     > added in model1d.h
+  computeVolumeBrain_spinal         > added in model1d.h
+  computeVolumeBrain                > added in model1d.h
+  inflowVolume                      > added in model1d.h
+
+> class spinal1d defined in spinal1d.cc spinal1d.h >> class added to model1d.h
+  spinal.stateDir
+  spinal.readState
+  spinal.readParameters
+  spinal.time
+  spinal.saveState()
+
+
+##### TODO
+Update csf_volume.cc -> csf.cc
+Visualization resp vs no_resp
+
+
+
+
+SENHA: :'BXcZ>4KA-X8)E
+
+
+Dear Federico
+For the ICCAI, I am thinking in talk about a recent work in the LNCC where we are modeling the cardiorespratory system and their coupling with the intracranial pressure dynamics and control mechanisms
+Do you need any concrete information, as title or abstract?
+
+Best
+Alonso
+
+????///////
+
+
+
+
+
+
+
+Prezados, boa tarde
+
+Gostaria de solicitar acesso no nível de admin para o usuário lalvarez, na máquina com os dados:
+hostname: pc013708
+patrimonio: 013708
+ip 146.134.61.67
+
+Segue em anexo o documento com as informações solicitadas
+
+Atenciosamente
+Alonso Alvarez
+
+
+Peço desculpas pela demora na resposta. Foi necessário consultar o pesquisador Diego Volpatto sobre a possibilidade de oferecer apoio ao seu seminário.
+
+Infelizmente, no caso dos seminários da PG, não dispomos de suporte além do transporte entre o Rio de Janeiro e Petrópolis.
+
+Diante dessas limitações, gostaria de confirmar se você deseja manter o seminário agendado para o dia 11 de maio. Como alternativa, também podemos realizar a apresentação em formato virtual, via Zoom, caso seja de sua preferência.
+
+Peço desculpas por eventuais inconvenientes e fico no aguardo de sua confirmação.

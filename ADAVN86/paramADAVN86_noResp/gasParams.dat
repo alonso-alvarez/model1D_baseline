@@ -1,0 +1,51 @@
+[LungsGas] 
+fio2 = 0.210379 // %
+fico2 = 0.000421   // %
+k = 1.2103   // -
+patm = 760.   // mmHg
+pws = 47.   // mmHg
+csato2 = 0.20448 //0.0227*9.  // mlgas/ml
+csatco2 = 1.9564192  //0.0227*86.11  // mlgas/ml
+h1 = 0.3836  // -
+h2 = 1.819  // -
+alpha1 = 0.03198 // mmHg^-1
+alpha2 = 0.05591 // mmHg^-1
+beta1 = 0.008275 // mmHg^-1
+beta2 = 0.03255  // mmHg^-1
+k1 = 14.99  // mmHg
+k2 = 194.4  // mmHg
+hgb = 0.15  // g/ml
+kO2 = 2.28 
+kCO2 = 65.6 
+
+[shunt]
+sh = 0.
+
+[regions]
+nRegions = 5
+regionID1 = '38 39 30 ' # extrasplanchnic
+regionID2 = '32 33 34 35 36 37 40 ' # splanchnic
+regionID3 = '7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 29 31 41 47 48 49 50 51 52 53 54 55 56 57 58 59 60 61' # skeletal muscle
+regionID4 = '26 27 28 ' # coronary
+regionID5 = '1 2 3 4 5 6 42 43 44 45 46 '# brain
+nTerritories1 = 3
+nTerritories2 = 7
+nTerritories3 = 37
+nTerritories4 = 3
+nTerritories5 = 11
+
+regionTissueVolumes = '262. 2673. 31200. 284. 1300. '
+metabolicRatesTerminalsO2 = '14.683 108.419 51.6 24. 47.502 ' # ml/min 
+metabolicRatesTerminalsCO2 = '12.3337 91.0720 43.344 20.16 39.9017 '
+
+
+[initial_conditions]
+fdo2 = 0.18
+fdco2 = 0.0281 
+fAo2 = 0.146 
+fAco2 = 0.0547
+#cppo2 = 0.1994
+#cppco2 = 0.4793
+#cvo2 = 0.151
+#cvco2 = 0.52
+

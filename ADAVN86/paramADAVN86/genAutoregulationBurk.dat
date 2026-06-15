@@ -1,0 +1,8 @@
+[params]
+tau = 20.
+Gtot = 0.2
+sat1 = 0.4
+sat2 = 1.5
+Gmulbase = 10.14404 # 10.82812
+kmult = 0.5
+CO2reactivityON = 0
